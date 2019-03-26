@@ -29,7 +29,7 @@ func Templates() []string {
 }
 
 func GetData () viewData {
-	data := viewData{
+	return viewData{
 		OpenIETag: `<!--[if (gte mso 9)|(IE)]>
 						  <table align="center" cellspacing="0" cellpadding="0" border="0" width="600" style="width: 600px;">
 							  <tr>
@@ -38,5 +38,5 @@ func GetData () viewData {
 		CloseIETag: "<!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->",
 		Version: 264,
 	}
-	return data
+	
 }
