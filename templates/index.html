@@ -44,7 +44,25 @@
              {{ template "header_menu" }}
           </tr>
           <!-- контент -->
-          {{ template "content" }}
+          {{if eq .Version 262 }}
+            {{ template "262" }}
+          {{end}}
+
+          {{if eq .Version 264 }}
+            {{ template "264" }}
+          {{end}}
+
+          {{if eq .Version 266 }}
+            {{ template "266" }}
+          {{end}}
+
+          {{if eq .Version 271 }}
+            {{ template "271" }}
+          {{end}}
+
+          {{if eq .Version 274 }}
+            {{ template "274" }}
+          {{end}}
           <tr>
           <!-- подвал -->
             <!-- соц сети -->
