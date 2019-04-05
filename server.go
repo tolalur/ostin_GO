@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"time"
 	"./config"
 )
 
@@ -16,6 +17,8 @@ func main() {
 
 	http.HandleFunc("/dev", func(w http.ResponseWriter, r *http.Request) {
 		
+		t0 := time.Now()
+		
 		htmlFiles := config.Templates()
 		data := config.GetData()
 
@@ -23,6 +26,9 @@ func main() {
 
 
 		tmpl.ExecuteTemplate(w, "index", data)
+		
+		fmt.Printf("Elapsed time: %v", time.Since(t0))
+
 	})
 
 	fmt.Println("Server is listening...")
